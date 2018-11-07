@@ -1,4 +1,4 @@
-import React, {Componet} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from "../actions/actionsTypes";
 

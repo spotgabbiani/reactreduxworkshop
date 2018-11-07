@@ -22,8 +22,8 @@ const TodoReducer = (state=INITAL_STATE, action) => {
           (todo.id === action.id) ? {...todo, completed: !todo.completed} : todo
       );
     case REMOVE_TODO:
-      const index = parseInt(action.id);
-      return state.filter(todo => todo.id !== index);
+      const numIndex = parseInt(action.id);
+      return state.filter(todo => todo.id !== numIndex);
     default:
       return state
   }
