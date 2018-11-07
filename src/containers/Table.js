@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from "../actions/actionsTypes";
-
+import {deleteTodo, toggleTodo, setVisibilityFilter} from "../actions/actionCreator";
+import { bindActionCreators } from 'redux';
 
 class Table extends Component {
   render () {
@@ -89,4 +90,15 @@ const mapStateToProps = state => {
   return { todos: state.todos }
 }
 
-export default connect(mapStateToProps)(Table);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+      {
+        deleteTodo,
+        toggleTodo,
+        setVisibilityFilter
+      },
+      dispatch
+  )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);

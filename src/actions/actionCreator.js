@@ -8,7 +8,8 @@ export const addTodo = text => ({
   text
 })
 
-export const deleteTodo = (id) => ({
+export const deleteTodo = (id) => (
+    {
   type: REMOVE_TODO,
   id
 })
